@@ -3,6 +3,7 @@ import Cardlist from "./Cardlist";
 import { robots } from "./robots";
 import Searchbox from "./Searchbox";
 import "./App.css";
+import Scroll from "./Scroll";
 
 class App extends Component {
   constructor() {
@@ -28,14 +29,19 @@ class App extends Component {
         .toLowerCase()
         .includes(this.state.searchfield.toLowerCase());
     });
-    console.log(filteredRobots);
-    return (
-      <div className="tc">
-        <h1>RoboFreinds</h1>
-        <Searchbox searchChange={this.onSearchChange} />
-        <Cardlist robots={filteredRobots} />
-      </div>
-    );
+    if (this.state.robots.length === 0) {
+      return <h1>loading</h1>;
+    } else {
+      return (
+        <div className="tc">
+          <h1>RoboFreinds</h1>
+          <Searchbox searchChange={this.onSearchChange} />
+          <Scroll>
+            <Cardlist robots={filteredRobots} />
+          </Scroll>
+        </div>
+      );
+    }
   }
 }
 export default App;
