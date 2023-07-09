@@ -1,70 +1,71 @@
-# Getting Started with Create React App
+# React RoboFreinds App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This repository contains a React app developed as part of a Udemy course. The app displays a list of robots and allows users to search for specific robots. The app utilizes components such as Card, Cardlist, Searchbox, and Scroll.
 
-## Available Scripts
+## Table of Contents
+- [Installation](#installation)
+- [Usage](#usage)
+- [Components](#components)
+  - [App.js](#appjs)
+  - [card.js](#cardjs)
+  - [Cardlist.js](#cardlistjs)
+  - [scroll.js](#scrolljs)
+  - [searchbox.js](#searchboxjs)
+  - [index.js](#indexjs)
+- [License](#license)
+- [Acknowledgements](#acknowledgements)
 
-In the project directory, you can run:
+## Installation
 
-### `npm start`
+To run the app locally, please follow these steps:
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+1. Clone this repository to your local machine.
+2. Make sure you have Node.js and npm installed.
+3. Open a terminal and navigate to the project directory.
+4. Run the following command to install the project dependencies:
+- npm install
+5. Once the installation is complete, you can start the app by running:
+- npm start
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
 
-### `npm test`
+6. This will start the app and open it in your default browser.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Usage
 
-### `npm run build`
+Upon launching the app, you will see a list of robots along with a search box at the top. You can type in the search box to filter the robots based on their names. The robot cards will dynamically update as you type in the search box.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Components
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### App.js
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+This is the main component of the app. It manages the state of the robots and the search field. It fetches the robot data from a remote API and updates the state accordingly. It also renders the Cardlist, Searchbox, and Scroll components.
 
-### `npm run eject`
+### card.js
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+This component represents an individual robot card. It displays the robot's name, email, and an image. The image URL is generated using the robohash.org API, which generates unique robot images based on the robot's ID.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### Cardlist.js
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+This component is responsible for rendering the list of robot cards. It receives an array of robots as a prop and maps over the array to create individual Card components for each robot.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+### scroll.js
 
-## Learn More
+This component provides a scrollable container for the robot cards. It sets the CSS style properties to enable vertical scrolling and adds a border for visual separation.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+### searchbox.js
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+This component displays a search box at the top of the app. It receives a callback function as a prop, which is triggered whenever the user types in the search box. The callback function updates the search field in the App component's state.
 
-### Code Splitting
+### index.js
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+This is the entry point of the app. It renders the App component and mounts it to the DOM. It also includes the necessary CSS imports and initializes the robot data.
 
-### Analyzing the Bundle Size
+## License
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
 
-### Making a Progressive Web App
+## Acknowledgements
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+This app was developed as part of a React course on Udemy.
 
-### Advanced Configuration
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
